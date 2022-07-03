@@ -1,2 +1,9 @@
-<h1>Categories#edit</h1>
-<p>Find me in app/views/categories/edit.html.erb</p>
+<div class="center">
+<h1>Kategori</h1>
+ <%=form_for @categories do|f|%>
+     Adı<%=f.text_field :name%><br>
+    
+     <%=f.submit 'Gönder',class: 'button'%>
+     <%=f.submit 'Gönder',class: 'button'%>
+    <%end%>
+    </div>

@@ -1,2 +1,7 @@
-<h1>Products#new</h1>
-<p>Find me in app/views/products/new.html.erb</p>
+<%= form_for @product do |f| %>
+  Name: <%= f.text_field :name, required: true %><br>
+  Content: <%= f.text_field  :contents, required: true %><br>
+  Description: <%=f.text_field  :description, required: true %>
+  Price: <%=f.text_field :price, required: true %>
+  <%= f.submit 'Gönder', class:'button'%>
+<% end %>
