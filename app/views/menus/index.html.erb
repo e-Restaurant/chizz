@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="images/favicon.png" type="">
+  <%= favicon_link_tag asset_path('logo.png') %>
+  <title> Chizz Fast & Burger </title>
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <div class="bg-box">
+      <%= image_tag "hero-bg.jpg"%>
+    </div>
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar custom_nav-container d-flex justify-content-center">
+          <%= link_to root_path do%>
+            <%= image_tag "logo.png", style:"max-width: 55px; margin-right: 10px;"%>
+          <%end%>
+          <%= link_to root_path, class:"navbar-brand" do%>
+            <span>
+              Chizz Burger & Food
+            </span>
+          <%end%>
+
+        </nav>
+      </div>
+    </header>
+  </div>
+
+  <section class="food_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>Menü</h2>
+      </div>
+
+      <div>
+        <nav>
+          <ul class="filters_menu d-flex" id="nav-tab" role="tablist">
+            <li class="nav-link active" id="nav-burger-tab" data-bs-toggle="tab" data-bs-target="#nav-burger" type="button" role="tab" aria-controls="nav-burger" aria-selected="true">Burger</li>
+            <li class="nav-link" id="nav-steak-tab" data-bs-toggle="tab" data-bs-target="#nav-steak" type="button" role="tab" aria-controls="nav-steak" aria-selected="false">Steak</li>
+            <li class="nav-link" id="nav-izgara-tab" data-bs-toggle="tab" data-bs-target="#nav-izgara" type="button" role="tab" aria-controls="nav-izgara" aria-selected="false">Izgara</li>
+            <li class="nav-link" id="nav-makarna-tab" data-bs-toggle="tab" data-bs-target="#nav-makarna" type="button" role="tab" aria-controls="nav-makarna" aria-selected="true">Makarna</li>
+            <li class="nav-link" id="nav-icecek-tab" data-bs-toggle="tab" data-bs-target="#nav-icecek" type="button" role="tab" aria-controls="nav-icecek" aria-selected="false">İçecek</li>
+            <li class="nav-link" id="nav-ekstra-tab" data-bs-toggle="tab" data-bs-target="#nav-ekstra" type="button" role="tab" aria-controls="nav-ekstra" aria-selected="false">Ekstra</li>
+            
+          </ul>
+        </nav>
+
+        <div class="tab-content" id="nav-tabContent">
+
+          <div class="tab-pane fade show active" id="nav-burger" role="tabpanel" aria-labelledby="nav-burger-tab">
+            <div class="col-sm-6 col-lg-4 col-4 col-md-4">
+              <div class="box">
+                <div>
+                  <div class="img-box">
+                    <%= image_tag "f1.png"%>
+                  </div>
+                  <div class="detail-box">
+                    <h5>
+                      Chizz Pizza
+                    </h5>
+                    <p>
+                      <b>İçindekiler:</b>
+                      <small>Acılı Chili Biber, Peynir, Zeytin, Pizza Sosu, Baharatlar</small><br><br>
+                      <b>Açıklama:</b>
+                      <small>Chizz Pizza'nın özel sosları ve ince kenar hamuru ile pizzanın tadına varacaksınız.</small>
+                    </p>
+                    <div class="options">
+                      <h6>
+                        55.90 &#8378;
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>  
+
+          <div class="tab-pane fade" id="nav-steak" role="tabpanel" aria-labelledby="nav-steak-tab">
+            <div class="col-sm-6 col-lg-4 col-4 col-md-4">
+              <div class="box">
+                <div>
+                  <div class="img-box">
+                    <%= image_tag "f2.png"%>
+                  </div>
+                  <div class="detail-box">
+                    <h5>
+                      Chizz Chili Burger
+                    </h5>
+                    <p>
+                      <b>İçindekiler:</b>
+                      <small>Acılı Chili Biber, Peynir, Zeytin, Pizza Sosu, Baharatlar</small><br><br>
+                      <b>Açıklama:</b>
+                      <small>Chizz Pizza'nın özel sosları ve ince kenar hamuru ile pizzanın tadına varacaksınız.</small>
+                    </p>
+                    <div class="options">
+                      <h6>
+                        35 &#8378;
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="nav-izgara" role="tabpanel" aria-labelledby="nav-izgara-tab">
+            <div class="col-sm-6 col-lg-4">
+              <div class="box">
+                <div>
+                  <div class="img-box">
+                    <%= image_tag "f2.png"%>
+                  </div>
+                  <div class="detail-box">
+                    <h5>
+                      Chizz Chili Burger
+                    </h5>
+                    <p>
+                      <b>İçindekiler:</b>
+                      <small>Acılı Chili Biber, Peynir, Zeytin, Pizza Sosu, Baharatlar</small><br><br>
+                      <b>Açıklama:</b>
+                      <small>Chizz Pizza'nın özel sosları ve ince kenar hamuru ile pizzanın tadına varacaksınız.</small>
+                    </p>
+                    <div class="options">
+                      <h6>
+                        35 &#8378;
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="nav-makarna" role="tabpanel" aria-labelledby="nav-makarna-tab">
+            <div class="col-sm-6 col-lg-4">
+              <div class="box">
+                <div>
+                  <div class="img-box">
+                    <%= image_tag "f9.png"%>
+                  </div>
+                  <div class="detail-box">
+                    <h5>
+                      Chicken Pasta
+                    </h5>
+                      <b>İçindekiler:</b>
+                      <small>Acılı Chili Biber, Peynir, Zeytin, Pizza Sosu, Baharatlar</small><br><br>
+                      <b>Açıklama:</b>
+                      <small>Chizz Pizza'nın özel sosları ve ince kenar hamuru ile pizzanın tadına varacaksınız.</small>
+                    <div class="options">
+                      <h6>
+                        35 &#8378;
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="nav-icecek" role="tabpanel" aria-labelledby="nav-icecek-tab">
+            <div class="col-sm-6 col-lg-4">
+              <div class="box">
+                <div>
+                  <div class="img-box">
+                    <%= image_tag "f9.png"%>
+                  </div>
+                  <div class="detail-box">
+                    <h5>
+                      Chicken Pasta
+                    </h5>
+                      <b>İçindekiler:</b>
+                      <small>Acılı Chili Biber, Peynir, Zeytin, Pizza Sosu, Baharatlar</small><br><br>
+                      <b>Açıklama:</b>
+                      <small>Chizz Pizza'nın özel sosları ve ince kenar hamuru ile pizzanın tadına varacaksınız.</small>
+                    <div class="options">
+                      <h6>
+                        35 &#8378;
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="nav-ekstra" role="tabpanel" aria-labelledby="nav-ekstra-tab">
+            <div class="col-sm-6 col-lg-4">
+              <div class="box">
+                <div>
+                  <div class="img-box">
+                    <%= image_tag "f9.png"%>
+                  </div>
+                  <div class="detail-box">
+                    <h5>
+                      Chicken Pasta
+                    </h5>
+                      <b>İçindekiler:</b>
+                      <small>Acılı Chili Biber, Peynir, Zeytin, Pizza Sosu, Baharatlar</small><br><br>
+                      <b>Açıklama:</b>
+                      <small>Chizz Pizza'nın özel sosları ve ince kenar hamuru ile pizzanın tadına varacaksınız.</small>
+                    <div class="options">
+                      <h6>
+                        35 &#8378;
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+  
+  <footer class="footer_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 footer-col">
+          <div class="footer_contact">
+            <h4>
+              İletişim
+            </h4>
+            <div class="contact_link_box">
+              <a href="https://goo.gl/maps/ZAu4peM8dqsEzmoWA">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Ataşehir, İmam Efendi Blv. no: 38/B, 23100 Merkez/Elazığ
+                </span>
+              </a>
+              <a href="tel:+905358610900">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  0535 861 09 00
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  demo@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 footer-col">
+          <div class="footer_detail">
+            <a href="" class="footer-logo">
+              <%= image_tag "logo.png", style:"max-width: 60px;"%>
+            </a>
+            <p>
+              Burgerin en ateşli hali. Footer alt bilgi açıklama metin kutusu
+            </p>
+            <div class="footer_social">
+              <a href="" style="color: black">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="">
+                <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+              </a>
+              <%= link_to root_path do%>
+                <i class="fa-brands fa-pinterest" aria-hidden="true"></i>
+              <%end%>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 footer-col">
+          <h4>
+            Çalışma Saatlerimiz
+          </h4>
+          <p>
+            Haftanın her günü
+          </p>
+          <p>
+            10.00 - 00.00
+          </p>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>
+          Chizz Burger & Food &copy; <span id="displayYear"></span> Tüm Hakları Saklıdır.<br>
+          Uygulama Tasarım | <a href="https://instagr.am/ufakbeg">iOTA.</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0-beta1/js/bootstrap.min.js" integrity="sha512-Hqe3s+yLpqaBbXM6VA0cnj/T56ii5YjNrMT9v+us11Q81L0wzUG0jEMNECtugqNu2Uq5MSttCg0p4KK0kCPVaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+</body>
+
+</html>

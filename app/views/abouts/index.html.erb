@@ -2,15 +2,18 @@
 <html>
 
 <head>
+  <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
   <link rel="shortcut icon" href="images/favicon.png" type="">
-
-  <title> Chizz Burger & Food </title>
+  <%= favicon_link_tag asset_path('logo.png') %>
+  <title> Chizz Fast & Burger </title>
 
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
@@ -23,11 +26,11 @@
 
 </head>
 
-<body>
+<body class="sub_page">
 
   <div class="hero_area">
     <div class="bg-box">
-    <%= image_tag "hero-bg.jpg" %>
+      <%= image_tag "hero-bg.jpg" %>
     </div>
     <header class="header_section">
       <div class="container">
@@ -58,74 +61,9 @@
         </nav>
       </div>
     </header>
-    
-    <section class="slider_section ">
-      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-7 col-lg-6 ">
-                  <div class="detail-box">
-                    <h1>
-                      Chizz Burger & Food</br>
-                      <small>Fast Food Restaurant</small>
-                    </h1>
-                    <p>
-                      Doloremque, itaque aperiam facilis rerum, commodi, temporibus sapiente ad mollitia laborum quam quisquam esse error unde. Tempora ex doloremque, labore, sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
-
-    </section>
   </div>
 
-  <section class="offer_section layout_padding-bottom">
-    <div class="offer_container">
-      <div class="container ">
-        <div class="row">
-          <div class="col-md-6  ">
-            <div class="box ">
-              <div class="img-box">
-                <%= image_tag "o1.jpg" %>
-              </div>
-              <div class="detail-box">
-                <h5>
-                  Lezzetli Pazartesi
-                </h5>
-                <h6>
-                  <span>%20</span> İndirim
-                </h6>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6  ">
-            <div class="box ">
-              <div class="img-box">
-                <%= image_tag "o2.jpg" %>
-              </div>
-              <div class="detail-box">
-                <h5>
-                  Büyük Boy'da Büyük İndirim
-                </h5>
-                <h6>
-                  <span> %15</span> İndirim
-                </h6>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="about_section layout_padding">
+  <section class="about_section_page layout_padding">
     <div class="container  ">
 
       <div class="row">
@@ -152,7 +90,7 @@
       </div>
     </div>
   </section>
-
+  
   <footer class="footer_section">
     <div class="container">
       <div class="row">
@@ -236,7 +174,6 @@
   <script src="js/custom.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0-beta1/js/bootstrap.min.js" integrity="sha512-Hqe3s+yLpqaBbXM6VA0cnj/T56ii5YjNrMT9v+us11Q81L0wzUG0jEMNECtugqNu2Uq5MSttCg0p4KK0kCPVaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
-
 </body>
 
 </html>
