@@ -1,2 +1,188 @@
-<h1>Categories#index</h1>
-<p>Find me in app/views/categories/index.html.erb</p>
+
+
+ <!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="images/favicon.png" type="">
+  <%= favicon_link_tag asset_path('logo.png') %>
+  <title> Chizz Fast & Burger </title>
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <div class="bg-box">
+      <%= image_tag "hero-bg.jpg" %>
+    </div>
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <%= link_to root_path, class:"navbar-brand" do %>
+            <span>
+              <%= image_tag "logo.png", style:"max-width: 60px" %>
+            </span>
+          <%end%>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ml-auto ">
+              <li class="nav-item active">
+                <%= link_to "Anasayfa", root_path, class:"nav-link"%>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Menü", menus_path, class:"nav-link"%>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Hakkımızda", abouts_path, class:"nav-link"%>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+  </div>
+
+  <section class="book_section layout_padding">
+    <div class="container">
+        <h2>Tüm Kategoriler</h2>
+<% @categories.each do |category|%>
+        <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Kategori Adı</th>
+            <th scope="col">İşlemler</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <th scope="row">1</th>
+            <td><%= category.name %></td>
+            <td><%=link_to("Göster",category_path(category.id),class: 'button')%>
+            <%=link_to("Güncelle",edit_category_path(category.id),class: 'button')%>
+            <%= link_to 'Sil', category_path(category.id),class: 'button', method: :delete, data: {:confirm => 'Emin misiniz?'} %></td>
+            </tr>
+        </tbody>
+        </table>
+                          <% end %>
+
+
+
+
+
+
+
+
+        
+    </div>
+  </section>
+  
+  <footer class="footer_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 footer-col">
+          <div class="footer_contact">
+            <h4>
+              İletişim
+            </h4>
+            <div class="contact_link_box">
+              <a href="https://goo.gl/maps/ZAu4peM8dqsEzmoWA">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Ataşehir, İmam Efendi Blv. no: 38/B, 23100 Merkez/Elazığ
+                </span>
+              </a>
+              <a href="tel:+905358610900">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  0535 861 09 00
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  demo@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 footer-col">
+          <div class="footer_detail">
+            <a href="" class="footer-logo">
+              <%= image_tag "logo.png", style:"max-width: 60px;"%>
+            </a>
+            <p>
+              Burgerin en ateşli hali. Footer alt bilgi açıklama metin kutusu
+            </p>
+            <div class="footer_social">
+              <a href="" style="color: black">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="">
+                <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+              </a>
+              <%= link_to root_path do%>
+                <i class="fa-brands fa-pinterest" aria-hidden="true"></i>
+              <%end%>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 footer-col">
+          <h4>
+            Çalışma Saatlerimiz
+          </h4>
+          <p>
+            Haftanın her günü
+          </p>
+          <p>
+            10.00 - 00.00
+          </p>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>
+          Chizz Burger & Food &copy; <span id="displayYear"></span> Tüm Hakları Saklıdır.<br>
+          Uygulama Tasarım | <a href="https://instagr.am/ufakbeg">iOTA.</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0-beta1/js/bootstrap.min.js" integrity="sha512-Hqe3s+yLpqaBbXM6VA0cnj/T56ii5YjNrMT9v+us11Q81L0wzUG0jEMNECtugqNu2Uq5MSttCg0p4KK0kCPVaQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+</body>
+
+</html>
