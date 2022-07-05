@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @product = Product.all
+    @products = Product.all
+    @categories = Category.all
   end
 
   def show
@@ -13,7 +14,7 @@ class ProductsController < ApplicationController
 
   def create 
     @product = Product.new(products_params)
-    
+
     if (@product.save)
 
       redirect_to products_path
@@ -27,7 +28,7 @@ class ProductsController < ApplicationController
 
   private
   def products_params
-    params.require(:product).permit(:name, :contents, :description, :price, :category_id)
+    params.require(:product).permit(:name, :contents, :description, :image, :price, :category_id)
   end
 
 end

@@ -89,6 +89,10 @@
                   <div>
                     <%= f.collection_select :category_id, Category.all, :id,:name %>
                   </div>
+                  <div>
+                    Resim Ekle: <%=f.file_field :image, required: true %>
+                  </div>
+
 
                   <div class="btn_box">
                   <%= f.submit 'Ürün Ekle', class:'button'%>
