@@ -69,7 +69,6 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
               <div class="form_container">
-                <form action="">
                 <%= form_for @categories do|f| %>
                   <div>
                     <%= f.text_field :name, placeholder:"Kategori Adı", class:"form-control" %>
@@ -77,8 +76,7 @@
                   <div class="btn_box">
                   <%= f.submit 'Ürün Ekle', class:'button'%>
                   </div>
-                  <% end %>
-                </form>
+                <% end %>
               </div>
             </div>
           </div>

@@ -68,26 +68,29 @@
   <section class="book_section layout_padding">
     <div class="container">
         <h2>Tüm Kategoriler</h2>
-<% @categories.each do |category|%>
+
         <table class="table">
         <thead>
             <tr>
-            <th scope="col">#</th>
             <th scope="col">Kategori Adı</th>
             <th scope="col">İşlemler</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-            <th scope="row">1</th>
-            <td><%= category.name %></td>
-            <td><%=link_to("Göster",category_path(category.id),class: 'button')%>
-            <%=link_to("Güncelle",edit_category_path(category.id),class: 'button')%>
-            <%= link_to 'Sil', category_path(category.id),class: 'button', method: :delete, data: {:confirm => 'Emin misiniz?'} %></td>
-            </tr>
+            
+            <% @categories.each do |category|%>
+              <tr>
+                <td><%= category.name %></td>
+                <td>
+                  <%= button_to "Güncelle", edit_category_path(category.id),:method => "get"%>
+                  <%= button_to "Sil", category_path(category.id), method: :delete %>
+                </td>
+              </tr>
+            <% end %>
+            
         </tbody>
         </table>
-                          <% end %>
+
 
 
 

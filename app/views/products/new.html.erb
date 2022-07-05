@@ -73,7 +73,6 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
               <div class="form_container">
-                <form action="">
                 <%= form_for @product do |f| %>
                   <div>
                     <%= f.text_field :name, placeholder:"Ürün Adı", class:"form-control", required: true %>
@@ -87,15 +86,14 @@
                   <div>
                     <%=f.text_field  :description, placeholder:"Ürün Açıklaması", class:"form-control", required: true %>
                   </div>
-                  <div class="">
-                    <label for="formFile" class="form-label">Ürün Görseli</label>
-                    <input class="form-control" type="file" id="formFile">
+                  <div>
+                    <%= f.collection_select :category_id, Category.all, :id,:name %>
                   </div>
+
                   <div class="btn_box">
                   <%= f.submit 'Ürün Ekle', class:'button'%>
                   </div>
                   <% end %>
-                </form>
               </div>
             </div>
           </div>
