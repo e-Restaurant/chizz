@@ -94,9 +94,11 @@
                           <h5>
                             <%= product.name %>
                           </h5>
-                          <p class ="h-100">
+                          <p style="overflow: scroll; max-height: 120px;">
                             <b>İçindekiler:</b>
-                            <small><%=product.contents %></small><br><br>
+                            <small><%=product.contents %></small>
+                          </p>
+                          <p style="overflow: hidden; max-height: 120px;">
                             <b>Açıklama:</b>
                             <small><%=product.description %></small>
                           </p>
