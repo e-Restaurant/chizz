@@ -69,7 +69,7 @@
   <section class="book_section layout_padding">
     <div class="container">
 
-    <h2>Ürün Ekle</h2>
+    <h2 class="text-center">Ürün Ekle</h2>
         <div class="row justify-content-center">
             <div class="col-md-6">
               <div class="form_container">
@@ -86,16 +86,16 @@
                   <div>
                     <%=f.text_field  :description, placeholder:"Ürün Açıklaması", class:"form-control", required: true %>
                   </div>
-                  <div>
-                    <%= f.collection_select :category_id, Category.all, :id,:name %>
-                  </div>
-                  <div>
-                    Resim Ekle: <%=f.file_field :image, required: true %>
+                  <div class="form-control d-flex justify-content-between">
+                    <div>
+                      <%= f.collection_select :category_id, Category.all, :id,:name %>
+                    </div>
+                    <%=f.file_field :image, required: true, class:""%>
                   </div>
 
 
-                  <div class="btn_box">
-                  <%= f.submit 'Ürün Ekle', class:'button'%>
+                  <div class="btn_box pull-right">
+                  <%= f.submit 'Ürün Ekle', class:'btn btn-success'%>
                   </div>
                   <% end %>
               </div>
