@@ -20,7 +20,7 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-    @categories=Category.find(params[:id])
+    @categories=Category.find_by_slug(params[:id])
   end
   def update
     @categories=Category.find(params[:id])
