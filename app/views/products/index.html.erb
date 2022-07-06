@@ -48,7 +48,10 @@
       </div>
     </header>
   </div>
-
+    <% if user_signed_in?%>
+      <%=link_to "Ürün Ekle",new_product_path%>
+      <%=link_to "Kategori Ekle",new_category_path%>
+    <% end %>
   <section class="food_section layout_padding">
     <div class="container">
       <div class="heading_container heading_center">
@@ -70,8 +73,9 @@
         <div class="tab-content" id="nav-tabContent">
           <% @categories.each do |category| %>
             <div class="tab-pane fade <%= @categories.first == category ? 'active show' : ''%> " id="nav-<%=category.slug%>" role="tabpanel" aria-labelledby="nav-<%=category.slug%>-tab">
-              <div class="col-sm-6 col-lg-4">
-                <% category.products.each do |product| %>
+            <% category.products.each do |product| %>
+              <div class="col-sm-6 col-lg-4 ">
+                
                 <div class="box">
                   
                   <div>
@@ -99,10 +103,14 @@
                         </div>
                       </div>
                     </div>
-                   
+                      <% if user_signed_in?%>
+                      <%= button_to "Düzenle", edit_product_path(product.id) %>
+                      <%= button_to 'Sil', product_path(product.id), method: :delete, data: {:confirm => 'Emin misiniz?'} %>
+                      <% end %>
                 </div>
-                <%end%> 
+              
               </div>
+                <%end%> 
             </div> 
           <%end%> 
         </div>
