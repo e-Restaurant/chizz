@@ -82,7 +82,7 @@
               <tr>
                 <td><%= category.name %></td>
                 <td>
-                  <%= button_to "Güncelle", edit_category_path(category.id),:method => "get"%>
+                  <%= link_to "Güncelle", edit_category_path(category.id),:method => "get"%>
                   <%= button_to "Sil", category_path(category.id), method: :delete %>
                 </td>
               </tr>

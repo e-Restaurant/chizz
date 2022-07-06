@@ -112,7 +112,7 @@
 
                       <div class="d-flex justify-content-center p-2">
                         <% if user_signed_in?%>
-                          <%= button_to "Düzenle", edit_product_path(product.id), class:"btn btn-sm btn-success" %>
+                          <%= link_to "Düzenle", edit_product_path(product.id), class:"btn btn-sm btn-success" %>
                           <%= button_to 'Sil', product_path(product.id), method: :delete, data: {:confirm => 'Emin misiniz?'}, class:"btn btn-sm btn-danger ml-3" %>
                         <% end %>
                       </div>
