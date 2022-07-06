@@ -489,6 +489,11 @@ a:focus {
           transform: scale(1.1);
 }
 
+.food_section .p-detail-s {
+  overflow: auto; 
+  max-height: 120px;
+}
+
 .food_section .filters_menu {
   padding: 0;
   display: -webkit-box;
@@ -551,7 +556,8 @@ a:focus {
 
 .food_section .box .detail-box {
   padding: 25px;
-  max-height: 250px;
+  max-height: 400px;
+  background-color: #383E42!important;
 }
 
 .food_section .box .detail-box h5 {
