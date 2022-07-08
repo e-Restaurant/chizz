@@ -82,5 +82,4 @@ test:
 production:
   <<: *default
   database: chizz_production
-  username: chizz
-  password: <%= ENV['CHIZZ_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
