@@ -40,6 +40,10 @@
 
           <a href="#" style=""><%= current_user.email if user_signed_in? %><br>
           </a>  
+          <% if user_signed_in?%>
+            <%= button_to 'Çıkış Yap', destroy_user_session_path, method: :delete %>
+          <% end %>
+
 
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class=""> </span>
