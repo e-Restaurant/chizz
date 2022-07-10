@@ -65,22 +65,26 @@
 
   <section class="book_section layout_padding">
     <div class="container">
-    <h2>Kategori Ekle</h2
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-              <div class="form_container">
-                <%= form_for @categories do|f| %>
-                  <div>
-                    <%= f.text_field :name, placeholder:"Kategori Adı", class:"form-control" %>
-                  </div>
-                  <div class="btn_box">
-                  <%= f.submit 'Ürün Ekle', class:'button'%>
-                  </div>
-                  <% end %>
+    <h2 class="text-center">Kategori Ekle</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="form_container">
+            <%= form_for @categories do|f| %>
+              <div>
+                <%= f.text_field :name, placeholder:"Kategori Adı", class:"form-control" %>
               </div>
-            </div>
+              <div class="d-flex justify-content-between">
+                <div class="btn_box">
+                <%= f.submit 'Kategori Ekle', class:'btn btn-sm btn-success'%>
+                </div>
+                <% end %>
+                <div>
+                  <%= link_to "Tüm Kategoriler", categories_path, class:"btn btn-sm btn-danger"%>
+                </div>
+              </div>
           </div>
-    </div>
+        </div>
+      </div>
   </section>
   
   <footer class="footer_section">

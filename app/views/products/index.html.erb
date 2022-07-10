@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ==" crossorigin="anonymous" />
   <link href="css/font-awesome.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="css/style.css" rel="stylesheet" />
   <link href="css/responsive.css" rel="stylesheet" />
 
@@ -48,7 +49,7 @@
       </div>
     </header>
   </div>
-  <div class="breadcumbs bg-light p-2" style="">
+  <div class="breadcumbs bg-light p-2 text-center">
     <% if user_signed_in?%>
       <%=link_to "Ürün Ekle",new_product_path, class:"btn btn-sm btn-success"%>
       <%=link_to "Kategori Ekle",new_category_path, class:"btn btn-sm btn-dark"%>
@@ -56,7 +57,7 @@
   </div>
 
 
-  <section class="food_section layout_padding">
+  <section class="food_section layout_padding" style="padding: 10px 0!important;">
     <div class="container">
       <div class="heading_container heading_center">
         <h2>Menü</h2>
@@ -65,7 +66,7 @@
       <div>
         <nav>
 
-          <ul class="filters_menu d-flex" id="nav-tab" role="tablist">
+          <ul class="category_auto_flow text-center" id="nav-tab" role="tablist">
           <% @categories.each do |category| %>
             <li class="nav-link <%= @categories.first == category ? 'active' : ''%> " id="nav-<%=category.slug%>-tab" data-bs-toggle="tab" data-bs-target="#nav-<%=category.slug%>" type="button" role="tab" aria-controls="nav-<%=category.slug%>" aria-selected="true"><%=category.name%></li>
 
@@ -80,46 +81,52 @@
             <div class="tab-pane filters-content <%= @categories.first == category ? 'active show' : ''%> " id="nav-<%=category.slug%>" role="tabpanel" aria-labelledby="nav-<%=category.slug%>-tab">
               <div class="row grid">
                 <% category.products.each do |product| %>
-                  <div class="col-sm-6 col-lg-4">
-                    <div class="box">
-                      <div>
-                        <div class="img-box">
-                          <%if product.image.attached?%>
-                            <%=image_tag product.image %>
-                          <%else%>
-                            Fotoğraf Bulunamadı.
-                          <%end%>
-                        </div>
-                        <div class="detail-box">
-                          <h5>
-                            <%= product.name %>
-                          </h5>
-                          <p class="p-detail-s">
-                            <b>İçindekiler:</b>
-                            <small><%=product.contents %></small>
-                          </p>
-                          <p class="p-detail-s">
-                            <b>Açıklama:</b>
-                            <small><%=product.description %></small>
-                          </p>
-                          <div class="options">
-                            <h6 class="bg-warning p-1">
-                              <%= product.price %> &#8378;
-                            </h6>
-                          </div>
-                        </div>
-                      </div>
+                  <div class="col-sm-6 col-lg-4 mb-3">
 
-                      <div class="d-flex justify-content-center p-2">
-                        <% if user_signed_in?%>
-                          <%= link_to "Düzenle", edit_product_path(product.id), class:"btn btn-sm btn-success" %>
-                          <%= button_to 'Sil', product_path(product.id), method: :delete, data: {:confirm => 'Emin misiniz?'}, class:"btn btn-sm btn-danger ml-3" %>
-                        <% end %>
-                      </div>
-                        
-                    </div>
+                        <div class="card h-100 border-0 shadow text-center">
+                          <div class="card-img-top">
+                            <div class="embed-responsive embed-responsive-4by3" style="border: 10px solid #ff5f01;">
+                              <div class="embed-responsive-item burger_img">
+                                <%if product.image.attached?%>
+                                  <%=image_tag product.image, class:"img-fluid w-100" %>
+                                <%else%>
+                                  Fotoğraf Bulunamadı.
+                                <%end%>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="card-body" style="background: #333; color: #f8f8f8;">
+                            <h5>
+                              <%= product.name %>
+                            </h5>
+                            <p class="p-detail-s">
+                              <b>İçindekiler:</b>
+                              <small><%=product.contents %></small>
+                            </p>
+                            <p class="p-detail-s">
+                              <b>Açıklama:</b>
+                              <small><%=product.description %></small>
+                            </p>
+                            <div class="options">
+                              <h3>
+                                <span style="background: #ff5f01; color: #333; border-radius: 5px;" class="p-1"><%= product.price %> &#8378;</span>
+                              </h3>
+                            </div>
+                            <div class="d-flex justify-content-center p-3 mt-3" style="background: #222; border-radius: 15px;">
+                              <% if user_signed_in?%>
+                                <%= link_to "Düzenle", edit_product_path(product.id), class:"btn btn-sm btn-success" %>
+                                <%= button_to 'Sil', product_path(product.id), method: :delete, data: {:confirm => 'Emin misiniz?'}, class:"btn btn-sm btn-danger ml-3" %>
+                              <% end %>
+                            </div>
+                          </div>
+
+                        </div>    
+                                            
                   </div>
                 <%end%>
+
+                
               </div> 
             </div> 
           </div> 

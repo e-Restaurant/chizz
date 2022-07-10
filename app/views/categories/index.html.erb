@@ -67,29 +67,42 @@
 
   <section class="book_section layout_padding">
     <div class="container">
-        <h2>Tüm Kategoriler</h2>
+        <h2 class="text-center mb-4">Tüm Kategoriler</h2>
 
-        <table class="table">
-        <thead>
-            <tr>
-            <th scope="col">Kategori Adı</th>
-            <th scope="col">İşlemler</th>
-            </tr>
-        </thead>
-        <tbody>
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <table class="table">
+              <thead>
+                  <tr>
+                  <th scope="col">Kategori Adı</th>
+                  <th scope="col"><span class="float-right">İşlemler</span></th>
+                  </tr>
+              </thead>
+              <tbody>
+                  
+              <% @categories.each do |category|%>
+                <tr>
+                  <td><%= category.name %></td>
+                  <td class="d-flex justify-content-end">
+                    <%= link_to "Güncelle", edit_category_path(category.id), class:"btn btn-sm btn-info", :method => "get"%>
+                    <%= button_to "Sil", category_path(category.id), class:"btn btn-sm btn-danger ml-2", method: :delete %>
+                  </td>
+                </tr>
+              <% end %>
+                  
+              </tbody>
+            </table>
             
-            <% @categories.each do |category|%>
-              <tr>
-                <td><%= category.name %></td>
-                <td>
-                  <%= link_to "Güncelle", edit_category_path(category.id),:method => "get"%>
-                  <%= button_to "Sil", category_path(category.id), method: :delete %>
-                </td>
-              </tr>
-            <% end %>
-            
-        </tbody>
-        </table>
+            <div>
+              <div>
+                  <%= link_to "Yeni Kategori Ekle", new_category_path, class:"btn btn-sm btn-success pull-right"%>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        
 
 
 
